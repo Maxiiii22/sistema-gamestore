@@ -1,0 +1,38 @@
+services:
+  django:
+    build: .
+    restart: unless-stopped
+    environment:
+      - CORRIENDO_DOCKER=True
+    ports: 
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - django_db_data:/app/data
+  ngrok:
+    image: ngrok/ngrok:latest
+    restart: unless-stopped
+    command:
+      - "http"
+      - "django:8000"
+    environment: 
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    ports:
+      - "4040:4040"
+    depends_on:
+      - django
+  mostrar-url:
+    image: badouralix/curl-jq:latest
+    depends_on:
+      - ngrok
+    entrypoint: >
+      sh -c "
+      sleep 10;
+      URL=$$(curl -s http://ngrok:4040/api/tunnels | jq -r '.tunnels[0].public_url');
+      echo '\n\n==================================================';
+      echo ' URL PÚBLICA DE NGROK LISTA:';
+      echo ' ---> ' \$$URL;
+      echo '==================================================\n\n';
+      "
+volumes:
+  django_db_data:
