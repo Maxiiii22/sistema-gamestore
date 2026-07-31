@@ -1,6 +1,6 @@
 # Game Store - Sistema E-commerce en Django
 
-**Game Store** es una plataforma e-commerce desarrollada con **Django**, que permite comprar videojuegos, consolas, celulares, relojes inteligentes y accesorios de PC. Incluye un sistema completo de carrito, pedidos, usuarios, retiro en tiendas físicas, direcciones de envío, control de stock, , pagos con MercadoPago, y filtros dinámicos para facilitar la navegación.
+**Game Store** es una plataforma e-commerce desarrollada con **Django**, que permite comprar videojuegos, consolas, celulares, relojes inteligentes y accesorios de PC. Incluye un sistema completo de carrito, pedidos, usuarios, retiro en tiendas físicas, direcciones de envío, control de stock, , pagos con MercadoPago, y filtros dinámicos para facilitar la navegación. Completamente contenedorizado con **Docker y Docker Compose** para facilitar su instalación y despliegue.
 
 ![Vista previa](imagenesPrevias/img-1.jpg)
 ![Vista previa](imagenesPrevias/img-2.jpg)
@@ -216,12 +216,11 @@ http://127.0.0.1:8000
 > Estas credenciales son provistas por Mercado Pago.
 > Además, para que la integración de Mercado Pago funcione correctamente en producción, es necesario contar con un dominio real con HTTPS habilitado, ya que Mercado Pago requiere un sitio accesible públicamente y seguro para procesar transacciones. Sin embargo, para realizar pruebas en el entorno de desarrollo, utilizamos ngrok para exponer tu servidor local a un dominio temporal con HTTPS, lo que permite simular el entorno de producción sin necesidad de un dominio real.
 
-> **Admin de testeo:**
-> User: `adminTest`
-> Password: `Admin45912`
-
-> **User de testeo:**
-> User: `userTest`
-> Password: `User45912`
+## Usuarios de prueba
+El sistema incluye usuarios de prueba con el fin de facilitar la evaluación de las funcionalidades.
+| Tipo | Usuario | Contraseña |
+|----|--------|-----------|
+| Admin | adminTest | Admin45912 |
+| User | userTest | User45912 |
 
 
