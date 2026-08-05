@@ -223,4 +223,7 @@ El sistema incluye usuarios de prueba con el fin de facilitar la evaluación de 
 | Admin | adminTest | Admin45912 |
 | User | userTest | User45912 |
 
+## Verificación de Pasarela de Pagos
+Para evaluar la integración con Mercado Pago, se encuentra disponible el artículo **"Producto de prueba"** con un valor simbólico de 1 ARS. Puede localizarlo utilizando la barra de búsqueda de la plataforma para iniciar el flujo de testeo de la pasarela de pagos.
+
 
